@@ -14,4 +14,10 @@ Si n <= 0, devolvemos cadena vacía.
 def repeat_name(name: str, n: int) -> str:
     """Devuelve el nombre repetido n veces, cada uno en una línea."""
     # TODO: implementar usando concatenación o "\n".join(...)
+    if n <= 0:
+        return ""
+    lista = []
+    for _ in range(n):
+        lista.append(name)
+    return "\n".join(lista)
     raise NotImplementedError("Implementa repeat_name(name, n)")
