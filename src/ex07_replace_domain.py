@@ -13,4 +13,9 @@ Si el correo no tiene exactamente una arroba, lanza ValueError.
 def replace_domain(email: str, new_domain: str = "ceu.es") -> str:
     """Devuelve el correo con el dominio sustituido por new_domain."""
     # TODO: separa con split("@"), valida y construye la nueva dirección
+    parts = email.split("@")
+    if len(parts) != 2:
+        raise ValueError("El correo debe contener exactamente una arroba")
+    local = parts[0]
+    return f"{local}@{new_domain}"
     raise NotImplementedError("Implementa replace_domain(email, new_domain)")
